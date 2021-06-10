@@ -29,7 +29,7 @@ def index():
 
 @app.route('/todo/api/v1.0/tasks', methods=['GET'])
 def get_tasks():
-    return jsonify({'tasks': gelenBilgiler.tasklariVer()})
+    return jsonify({'tasks': tasks})
 
 
 # cevapin json formatinda gelmesi icin özel olarak cevapliyoruz
