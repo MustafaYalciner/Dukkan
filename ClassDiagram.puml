@@ -1,28 +1,25 @@
 @startuml
-class Mustafa{
-  You can use
-  several lines
+class Lokasyon{
+ ' https://support.google.com/maps/answer/18539?co=GENIE.Platform%3DDesktop&hl=en
+  - double x
+  - double y
+}
+Motorcu -> Lokasyon
+class Motorcu{
+  - string isim
   ..
-  as you want
-  and group
+  - Lokasyon konum
+  ..
+  - bool bosda
+  ..
+  -
   ==
-  things together.
-  __
-  You can have as many groups
-  as you want
-  --
   End of class
 }
-
-class User {
-  .. Simple Getter ..
-  + getName()
-  + getAddress()
-  .. Some setter ..
-  + setName()
-  __ private data __
-  int age
-  -- encrypted --
-  String password
+Main "1" ---> "*" Motorcu
+class Main{
+  - list<Motorcu> motorcular
+  ==
+  + JSON get_motorcular()
 }
 @enduml
