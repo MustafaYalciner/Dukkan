@@ -11,11 +11,26 @@ import geopy.distance
 
 from Lokasyon import Lokasyon
 from Motorcu import Motorcu
-
+from Dukkan import Dukkan
 app = Flask("Dukkan Uygulamasi")
 
 motorcular = [Motorcu("Ismet007", False, Lokasyon(12, 13)), Motorcu("Fatih88", True, Lokasyon(12, 13))]
 
+# dükkanlar class olustur mustafa kafanı kırar;
+
+
+
+
+Dukkanlar = [Dukkan("Paşa Döner",True,Lokasyon(11,14)),Dukkan("Fırın Sanatı",False,Lokasyon(9,15))]
+
+@app.route('/todo/api/v1.0/dukkanlar', methods=['PUT'])
+def update_task():
+    Dukkan = jsonpickle.decode(request.get_data())
+    Dukkanlar.append(Dukkan)
+    return jsonpickle.encode(Dukkan)
+@app.route('/todo/api/v1.0/dukkanlar', methods=['GET'])
+def get_tasks():
+    return jsonpickle.encode(Dukkanlar)
 
 @app.route('/')
 def index():
