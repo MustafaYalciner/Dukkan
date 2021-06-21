@@ -19,8 +19,6 @@ motorcular = [Motorcu("Ismet007", False, Lokasyon(12, 13)), Motorcu("Fatih88", T
 # dükkanlar class olustur mustafa kafanı kırar;
 
 
-
-
 Dukkanlar = [Dukkan("Paşa Döner",True,Lokasyon(11,14)),Dukkan("Fırın Sanatı",False,Lokasyon(9,15))]
 
 @app.route('/todo/api/v1.0/dukkanlar', methods=['PUT'])
