@@ -7,6 +7,7 @@ from flask import Flask, request, make_response
 from Lokasyon import Lokasyon
 from Motorcu import Motorcu
 from Dukkan import Dukkan
+from Siparis import Siparis
 app = Flask("Dukkan Uygulamasi")
 
 motorcular = [Motorcu("Ismet007", False, Lokasyon(12, 13)), Motorcu("Fatih88", True, Lokasyon(12, 13))]
@@ -15,6 +16,17 @@ motorcular = [Motorcu("Ismet007", False, Lokasyon(12, 13)), Motorcu("Fatih88", T
 
 
 Dukkanlar = [Dukkan("Pasa Doner",True,Lokasyon(11,14)),Dukkan("Firin Sanati",False,Lokasyon(9,15))]
+
+siparisler=[Siparis("ismet","cetin",Lokasyon(11,11),"tavukdurum")]
+
+@app.route('/todo/api/v1.0/siparisler', methods=['PUT'])
+def update_siparisler():
+    Siparis = jsonpickle.decode(request.get_data())
+    siparisler.append(Siparis)
+    return jsonpickle.encode(Dukkan)
+@app.route('/todo/api/v1.0/siparisler', methods=['GET'])
+def get_siparisler():
+    return jsonpickle.encode(siparisler)
 
 @app.route('/todo/api/v1.0/dukkanlar', methods=['PUT'])
 def update_dukkanlar():
