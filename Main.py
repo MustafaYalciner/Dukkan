@@ -8,6 +8,8 @@ from Lokasyon import Lokasyon
 from Motorcu import Motorcu
 from Dukkan import Dukkan
 from Siparis import Siparis
+from VeriTabaninaYazar import VeriTabaninaYazar
+
 app = Flask("Dukkan Uygulamasi")
 
 motorcular = [Motorcu("Ismet007", False, Lokasyon(12, 13)), Motorcu("Fatih88", True, Lokasyon(12, 13))]
@@ -76,6 +78,8 @@ def create_task():
     return
 
 if __name__ == '__main__':
+    veriTabaninaYazar = VeriTabaninaYazar()
+    veriTabaninaYazar.dukkani_kayit_et(Dukkan("Pasa Doner",True,Lokasyon(11,14)))
     app.run(debug=True)
 
 
