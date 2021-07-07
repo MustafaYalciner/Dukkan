@@ -32,9 +32,10 @@ def get_siparisler():
 
 @app.route('/todo/api/v1.0/dukkanlar', methods=['PUT'])
 def update_dukkanlar():
-    Dukkan = jsonpickle.decode(request.get_data())
-    Dukkanlar.append(Dukkan)
-    return jsonpickle.encode(Dukkan)
+    dukkan = jsonpickle.decode(request.get_data())
+    Dukkanlar.append(dukkan)
+    return jsonpickle.encode(dukkan)
+
 @app.route('/todo/api/v1.0/dukkanlar', methods=['GET'])
 def get_tasks():
     return jsonpickle.encode(Dukkanlar)
