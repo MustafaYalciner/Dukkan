@@ -156,7 +156,6 @@ def create_task():
 if __name__ == '__main__':
     veriTabaninaYazar = VeriTabaninaYazar()
     veriTabaninaYazar.dukkani_kayit_et(Dukkan("Pasa Doner",True,Lokasyon(11,14)))
-    app.secret_key = "session_1"
     app.run(debug=True)
 
 
