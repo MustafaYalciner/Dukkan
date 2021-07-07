@@ -2,7 +2,7 @@ import json
 
 # http://jsonpickle.github.io/
 import jsonpickle
-from flask import Flask, request, make_response, session
+from flask import Flask, request, make_response
 
 from Lokasyon import Lokasyon
 from Motorcu import Motorcu
